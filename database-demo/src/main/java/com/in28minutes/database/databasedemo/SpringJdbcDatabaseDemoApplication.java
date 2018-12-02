@@ -7,7 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+//import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.in28minutes.database.databasedemo.entity.Course;
 import com.in28minutes.database.databasedemo.entity.Person;
@@ -15,7 +15,7 @@ import com.in28minutes.database.databasedemo.jdbc.PersonJdbcDAO;
 import com.in28minutes.database.databasedemo.jpa.PersonJpaRepository;
 import com.in28minutes.database.databasedemo.repository.CourseRepository;
 
-@SpringBootApplication
+//@SpringBootApplication
 public class SpringJdbcDatabaseDemoApplication implements CommandLineRunner {
 
 	@Autowired
