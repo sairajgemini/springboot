@@ -7,12 +7,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+//import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.in28minutes.database.databasedemo.entity.Person;
 import com.in28minutes.database.databasedemo.jpa.PersonJpaRepository;
 
-@SpringBootApplication
+//@SpringBootApplication
 public class SpringJpaDatabaseDemoApplication implements CommandLineRunner {
 	@Autowired
 	private PersonJpaRepository personJpaRepository;
@@ -26,7 +26,11 @@ public class SpringJpaDatabaseDemoApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		logger.info("Retrieving Person details through Spring Jpa");
-		logger.info("User 10003 -> {}", personJpaRepository.findById(10002));
-	    logger.info("User saved-> {}", personJpaRepository.insert(new Person("Pankaj Kumar", "Bangalore", new Date())), "\n");
+		logger.info("All Person -> {}", personJpaRepository.findAllPerson());
+		logger.info("Person 10003 -> {}", personJpaRepository.findById(10002));
+	    logger.info("Person created -> {}", personJpaRepository.insert(new Person("Pankaj Kumar", "Bangalore", new Date())));
+	    logger.info("Person updated -> {}", personJpaRepository.insert(new Person(1, "Pankaj Roy", "Bangalore", new Date())));
+	    
+	    personJpaRepository.deleteById(10001);
 	}
 }

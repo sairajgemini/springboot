@@ -23,7 +23,7 @@ public class CourseRepository {
 	}
 	
 	public void deleteById(Long id) {
-		
+		em.remove(findById(id));
 	}
 
 }

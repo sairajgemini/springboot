@@ -9,7 +9,6 @@ public class Course {
 	@Id
 	@GeneratedValue
 	private Long id;
-
 	private String name;
 
 	protected Course() {
