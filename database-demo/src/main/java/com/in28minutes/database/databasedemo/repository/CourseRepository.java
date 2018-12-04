@@ -25,5 +25,22 @@ public class CourseRepository {
 	public void deleteById(Long id) {
 		em.remove(findById(id));
 	}
+	
+	public void playWithEntityManager() {
+		Course course = new Course("Spring Boot in 100 steps");
+		em.persist(course);
+		
+		Course course1 = new Course("Angular JS advanced");
+		em.persist(course1);
+		
+		em.flush();
+		
+		course.setName("Advanced Web services in 100 steps");
+		course1.setName("Advanced Angular JS updated");
+		
+		em.refresh(course);
+		
+		em.flush();
+	}
 
 }

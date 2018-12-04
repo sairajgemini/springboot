@@ -23,9 +23,11 @@ public class CourseJpaDatabaseDemoApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		logger.info("Retrieving Person details through Spring Jpa");
-		logger.info("CourseById 10001L -> {}", courseJpaRepository.findById(10001L));
-		logger.info("Course 10003 -> {}", courseJpaRepository.save(new Course("JPA with Spring and Hibernate")));
-		courseJpaRepository.deleteById(10001L);
+		//logger.info("Retrieving Person details through Spring Jpa");
+		//logger.info("CourseById 10001L -> {}", courseJpaRepository.findById(10001L));
+		//logger.info("Course 10003 -> {}", courseJpaRepository.save(new Course("JPA with Spring and Hibernate")));
+		
+		courseJpaRepository.playWithEntityManager();
+		//courseJpaRepository.deleteById(10001L);
 	}
 }
